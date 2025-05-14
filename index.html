@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Convolution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo/logo.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PIXL/ART</div>
+        <ul class="nav-links">
+            <li><a href="C:\Users\ASUS\Documents\Web-Clint\Editor\PIXL_ART.html">PIXL/ART Editor</a></li>
+            <li><a href="C:\Users\ASUS\Documents\Web-Clint\Shape&Color\index.html">Shape & Color Detections</a></li>
+            <li><a href="C:\Users\ASUS\Documents\Web-Clint\Image Analysis\index.html">Image Analysis</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>PIXL/ART</h1>
+
+        <div class="image-container">
+            <div class="box">
+                <h3>Original</h3>
+                <canvas id="originalCanvas"></canvas>
+            </div>
+            <div class="box">
+                <h3>Processed Image</h3>
+                <canvas id="editedCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="kernel-wrapper">
+        <div class="kernel-section">
+            <h3>🎛️ Custom Kernel (3x3 Grid)</h3>
+            <div id="kernelGrid">
+                <input type="number" id="k00" value="0">
+                <input type="number" id="k01" value="0">
+                <input type="number" id="k02" value="0">
+                <input type="number" id="k10" value="0">
+                <input type="number" id="k11" value="0">
+                <input type="number" id="k12" value="0">
+                <input type="number" id="k20" value="0">
+                <input type="number" id="k21" value="0">
+                <input type="number" id="k22" value="0">
+            </div>
+            <button onclick="applyCustomKernel()" class="button1">Apply Custom Kernel</button>
+            <button onclick="resetKernelGrid()" class="button1">Reset Grid</button>
+        </div>
+    </div>
+    
+    <div class="containerokie1">
+        <button onclick="applySmoothing()" class="button">🌫️ Smooth Image</button>
+        <button onclick="Gaussianblur()" class="button">🌪️ Gaussian Blur</button>
+        <button onclick="sharpenImage()" class="button">🔪 Sharpen Image</button>
+        <button onclick="meanRemoval()" class="button">❌ Mean Removal</button>
+        <button onclick="embosslaplascian()" class="button">🖼️ Emboss Laplacian</button>
+    </div>
+    
+    <div class="containerokie2">
+        <label for="imageInput" class="upload-btn">📂 Upload Image</label>
+        <input type="file" id="imageInput" accept="image/*" hidden>
+        <button id="save">💾 Save</button>
+        <button onclick="resetImage()" class="button">🔄 Reset Image</button>
+        <button id="toggleButton" onclick="customkernel()" class="button">⚙️ Show Custom Kernel</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
